@@ -11,15 +11,13 @@ function init() {
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x0);
 
-    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1000);
     camera.position.set(3,0,0);
 
     const canvas = document.getElementById("THREEcontainer");
     renderer = new THREE.WebGLRenderer({canvas: canvas});
     renderer.setPixelRatio(window.devicePixelRatio);
-    resize();
-
-    document.body.appendChild(renderer.domElement);
+    onResize();
 
     const ambient = new THREE.HemisphereLight(0xaaaaaa, 0xaaaaaa, 0.9);
     scene.add(ambient);
@@ -66,7 +64,7 @@ function init() {
         });
     });
 
-    window.addEventListener("resize", onresize, false);
+    window.addEventListener("resize", onResize, false);
     update();
 }
 
@@ -81,10 +79,13 @@ function update() {
     renderer.render(scene, camera);
 }
 
-function onresize(){
-    camera.aspect = window.innerWidth / (window.innerHeight * 0.65);
-    camera.updateProjectionMatrix();
+function onResize(){
+    const canvas = document.getElementById("THREEcontainer");
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
-    renderer.setSize(window.innerWidth, (window.innerHeight * 0.65));
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
 }
 

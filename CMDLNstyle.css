@@ -1,0 +1,38 @@
+
+@font-face {
+    font-family: OCRBfont;
+    src: url(assets/fonts/OCBR.otf);
+}
+
+.command-line {
+    font-family: OCRBfont;
+    color: #4bee00;
+    font-size: 17px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+.command-line p, li {
+    color: #4bee00;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.command-line li {
+    font-style: italic;
+}
+
+.command-line ul {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.command-line button, a {
+    color: #88ff88;
+    border: 0px;
+    background: none;
+    text-decoration: underline;
+    padding-left: 0px;
+}
