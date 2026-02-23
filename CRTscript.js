@@ -81,8 +81,8 @@ function update() {
 
 function onResize(){
     const canvas = document.getElementById("THREEcontainer");
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = canvas.innerWidth;
+    const height = canvas.innerHeight;
 
     camera.aspect = width / height;
     camera.updateProjectionMatrix();

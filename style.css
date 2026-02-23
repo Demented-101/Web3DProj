@@ -28,9 +28,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Some simple CSS rules for styling p, h1 to h6, etc. in the main contents container
-*/
-
 p {
 	font-family: OCRBfont;
 }
@@ -40,19 +37,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: OCRBfont;
 }
 
-/* NAVIGATION MENU
-*/
-
-/* CSS rules to overwrite the position of the Bootstrap menu
-Bootstrapbay Bootstrap Tutorial Part 11 — CSS Modifications to Navbar and Buttons shows how to do this using Bootstrap 3, the principle should be the same: https://www.youtube.com/watch?v=7v2yC3GyDHU  
-
-/* Let's style the dropdown menu
-*/
-
 .dropdown-menu {
     text-align: -webkit-left;
     background-color: #eb9a91;
-    margin-top: 20px; /* Experiment to move the dropdown menu down */
+    margin-top: 20px;
 }
 
 .dropdown-menu
@@ -66,7 +54,6 @@ Bootstrapbay Bootstrap Tutorial Part 11 — CSS Modifications to Navbar and Butt
     background-color: #e98074;
 }
 
-/* CSS rule to style the footer */
 .footer {
     color: #FFF;
     background-color: #760003;
@@ -92,6 +79,50 @@ Bootstrapbay Bootstrap Tutorial Part 11 — CSS Modifications to Navbar and Butt
     padding-top: 0px;
     text-decoration: none;
 }
+
+.logo {
+    margin-top: 3px;
+}
+
+.logo h1 {
+    font-size: 30px;
+    margin: 0;
+    margin-top: 0px;
+    margin-bottom: -15px;
+    float: left;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 2px;
+    }
+
+.logo h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 3px;
+    float: left;
+    }
+
+.logo h3 {
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: -5px;
+    padding-top: 0px;
+    padding-left: 0px;
+    float: left;
+    }
+
+.logo p {
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: -20px;
+    padding-top: 40px;
+    padding-left: 12px;
+}
+
+
 
 @media (min-width: 576px) {
 
@@ -222,7 +253,6 @@ Bootstrapbay Bootstrap Tutorial Part 11 — CSS Modifications to Navbar and Butt
         padding-left: 16px;
     }
 
-    /* CSS rule to style the footer */
     .footer {
         background-color: #b890b1;
         height: 60px;
