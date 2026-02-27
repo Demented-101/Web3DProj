@@ -16,12 +16,11 @@
    No media query since this is the default in Bootstrap
 */
 
-#THREEcontainer {
+#threeContainer {
     width: 100%;
     height: 80vh;
     display: block;
     overflow: hidden;
-    color: #b890b1;
 }
 
 body, html {

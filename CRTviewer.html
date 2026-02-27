@@ -62,18 +62,20 @@
   </nav>
       
   <div class = "container-fluid main contents">
-    <button id="buttonA">Turn On</button> <br>
-    <button id="buttonB">Edjust</button>
-
-    <canvas id="THREEcontainer"></canvas>
+    <button id = "btn-turn-on"> Turn on </button><button id = "btn-edjust"> Edjust </button>
+    
+    <!-- add canvas and div -->
+    <canvas id = threeContainer></canvas>
+    <div id="threeContainer"></div>
 
     <script>
       function updateContainerSize(){
-        var container = document.getElementById("THREEcontainer");
-        width = window.innerWidth;
-        height = window.innerHeight;
+        var container = document.getElementById("threeContainer");
+        var width = window.innerWidth;
+        var height = window.innerHeight;
 
-        container.width = width; container.height = height;
+        container.width = width; 
+        container.height = height;
       }
       window.addEventListener("load", updateContainerSize);
       window.addEventListener("resize", updateContainerSize);
