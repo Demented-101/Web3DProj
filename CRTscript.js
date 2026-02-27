@@ -1,4 +1,4 @@
-let scene, camera, renderer, clock, mixer, actions = [], mode;
+let scene, camera, renderer, clock, mixer, actions = [], isActive;
 
 init();
 
@@ -30,60 +30,68 @@ function init() {
     controls.target.set(0, 0, 0);
     controls.update();
 
-    mode = 'open';
+    isActive = 'off';
     const btnA = document.getElementById("btn-turn-on");
     btnA.addEventListener('click', function() {
         if (actions.length === 2) {
-            if (mode === "open") {
-                actions.forEach(action => {
-                    action.timeScale = 1;
-                    action.reset();
-                    action.play();
-                    });
-                }
-            }
+            if (isActive === "off") {
+                actions[1].setLoop(THREE.loopOnce, 1);
+                actions[1].clampWhenFinished = true
+                actions[1].play();
+                isActive = "on";
+            };
+        }
     });
 
     const btnB = document.getElementById("btn-edjust");
+    btnB.addEventListener("click", function(){
+        if (actions.length === 2){
+            actions[0].reset();
+            actions[0].setLoop(THREE.LoopPingPong, 2);
+            actions[0].play();
+        }
+    });
  
     // Load the glTF model
     const loader = new THREE.GLTFLoader();
     loader.load(assetPath + 'CRTv1.glb', function(gltf) {
-    const model = gltf.scene;
-    scene.add(model);
+        // load the model and add to scene
+        const model = gltf.scene;
+        scene.add(model);
    
-    // Set up animations
-    mixer = new THREE.AnimationMixer(model);
-    const animations = gltf.animations;
+        // Set up animations
+        mixer = new THREE.AnimationMixer(model);
+        const animations = gltf.animations;
 
-    animations.forEach(clip => {
-      const action = mixer.clipAction(clip);
-      actions.push(action);
+        animations.forEach(clip => {
+            const action = mixer.clipAction(clip);
+            action.timeScale = 1;
+            actions.push(action);
+        });
+
     });
-
-  });
  
 
 
-  // Handle resizing
-  window.addEventListener('resize', onResize, false);
- 
-  // Start the animation loop
-  animate();
+    // Handle resizing
+    window.addEventListener('resize', onResize, false);
+    
+    // Start the animation loop
+    animate();
 }
 
 function animate() {
   requestAnimationFrame(animate);
 
-  // Update animations
-  if (mixer) {
-    mixer.update(clock.getDelta());
-  }
+    // Update animations
+    if (mixer) {
+        mixer.update(clock.getDelta());
+    }
 
     scene.background = new THREE.Color(0, Math.sin(clock.getElapsedTime())/10 + 0.2, 0);
     renderer.render(scene, camera);
 
-  renderer.render(scene, camera);
+    renderer.render(scene, camera);
 }
 
 function onResize(){
