@@ -1,4 +1,4 @@
-let scene, camera, renderer, clock, mixer, actions = [], isActive;
+let scene, camera, renderer, model, iswireframe = false, clock, mixer, actions = [], isActive = "off";
 
 init();
 
@@ -16,7 +16,7 @@ function init() {
     renderer.setPixelRatio(canvas.devicePixelRatio);
     
     camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 0, 5);
+    camera.position.set(5, 0, 0);
     
     const ambient = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
     scene.add(ambient);
@@ -29,33 +29,11 @@ function init() {
     controls.target.set(0, 0, 0);
     controls.update();
     
-    isActive = 'off';
-    const btnA = document.getElementById("btn-turn-on");
-    btnA.addEventListener('click', function() {
-        if (actions.length === 2) {
-            if (isActive === "off") {
-                actions[1].setLoop(THREE.loopOnce, 1);
-                actions[1].clampWhenFinished = true
-                actions[1].play();
-                isActive = "on";
-            };
-        }
-    });
-    
-    const btnB = document.getElementById("btn-edjust");
-    btnB.addEventListener("click", function(){
-        if (actions.length === 2){
-            actions[0].reset();
-            actions[0].setLoop(THREE.LoopPingPong, 2);
-            actions[0].play();
-        }
-    });
-    
     // Load the glTF model
     const loader = new THREE.GLTFLoader();
     loader.load(assetPath + 'CRTv1.glb', function(gltf) {
         // load the model and add to scene
-        const model = gltf.scene;
+        model = gltf.scene;
         scene.add(model);
         
         // Set up animations
@@ -69,6 +47,11 @@ function init() {
         });
     });
     
+    // setup buttons
+    document.getElementById("btn-turn-on").addEventListener('click', animTurnOn);
+    document.getElementById("btn-edjust").addEventListener("click", animEdjust);
+    document.getElementById("btn-wireframe").addEventListener("click", toggleWireframe);
+
     // Handle resizing
     window.addEventListener('resize', onResize, false);
     onResize();
@@ -100,3 +83,31 @@ function onResize(){
     renderer.setSize(width, height, false);
 }
 
+function animTurnOn() {
+    if (actions.length === 2) {
+        if (isActive === "off") {
+            actions[1].setLoop(THREE.loopOnce, 1);
+            actions[1].clampWhenFinished = true
+            actions[1].play();
+            isActive = "on";
+        };
+    }
+}
+
+function animEdjust(){
+    if (actions.length === 2){
+        actions[0].reset();
+        actions[0].setLoop(THREE.LoopPingPong, 2);
+        actions[0].play();
+    }
+}
+
+function toggleWireframe(){
+    iswireframe = !iswireframe;
+
+    scene.traverse(function(obj){
+        if(obj.isMesh){
+            obj.material.wireframe = iswireframe;
+        }
+    });
+}

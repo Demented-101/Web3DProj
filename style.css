@@ -16,14 +16,6 @@
    No media query since this is the default in Bootstrap
 */
 
-#threeContainer {
-    width: 70%;
-    height: 80vh;
-    display: block;
-    overflow: hidden;
-    float: left;
-}
-
 body, html {
     height: 100%;
 }

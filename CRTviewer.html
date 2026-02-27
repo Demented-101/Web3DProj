@@ -60,14 +60,22 @@
           </ul>
       </div>
   </nav>
-      
-  <div class = "container-fluid main contents">
-    <button id = "btn-turn-on"> Turn on </button><button id = "btn-edjust"> Edjust </button>
-    
-    <!-- add canvas and div -->
-    <canvas id = "threeContainer"></canvas>
+  
+  <!-- add canvas and div -->
+  <canvas id = "threeContainer"></canvas>
+
+  <div class = "separatorL"></div>
+  <div class = "separatorR"></div>
+
+  <div class = "rightColumn command-line">
+    Use the below commands to effect the displayed model
+    <button id = "btn-turn-on"> !- RunAnim(Turn on) </button> <br>
+    <button id = "btn-edjust"> !- RunAnim(Edjust) </button>
+    <button id = "btn-wireframe">!- ToggleWireframe</button>
   </div>
 
+
+  <!-- append scripts -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js'></script>
   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/OrbitControls.js'></script>
   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js'></script>

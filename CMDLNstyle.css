@@ -36,3 +36,32 @@
     text-decoration: underline;
     padding-left: 0px;
 }
+
+.rightColumn {
+    width: 28%;
+    height: 80vh;
+    float: right;
+}
+
+.separatorL, .separatorR {
+    width: 1%;
+    height: 80vh;
+    background-color: #282828;
+}
+
+.separatorL {
+    float: left;
+}
+
+.separatorR {
+    float: right;
+}
+
+/* container for the 3D model*/
+#threeContainer {
+    width: 70%;
+    height: 80vh;
+    display: block;
+    overflow: hidden;
+    float: left;
+}
