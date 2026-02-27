@@ -65,21 +65,7 @@
     <button id = "btn-turn-on"> Turn on </button><button id = "btn-edjust"> Edjust </button>
     
     <!-- add canvas and div -->
-    <canvas id = threeContainer></canvas>
-    <div id="threeContainer"></div>
-
-    <script>
-      function updateContainerSize(){
-        var container = document.getElementById("threeContainer");
-        var width = window.innerWidth;
-        var height = window.innerHeight;
-
-        container.width = width; 
-        container.height = height;
-      }
-      window.addEventListener("load", updateContainerSize);
-      window.addEventListener("resize", updateContainerSize);
-    </script>
+    <canvas id = "threeContainer"></canvas>
   </div>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js'></script>

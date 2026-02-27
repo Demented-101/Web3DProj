@@ -17,10 +17,11 @@
 */
 
 #threeContainer {
-    width: 100%;
+    width: 70%;
     height: 80vh;
     display: block;
     overflow: hidden;
+    float: left;
 }
 
 body, html {
