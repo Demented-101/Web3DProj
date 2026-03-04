@@ -61,19 +61,20 @@
       </div>
   </nav>
   
-  <!-- add canvas and div -->
-  <canvas id = "threeContainer"></canvas>
+  <div class = "container-fluid">
+    <div class = "row">
+      <div class = "col-sm-8 three-container">
+        <canvas id = "threeContainer"></canvas>
+      </div>
 
-  <div class = "separatorL"></div>
-  <div class = "separatorR"></div>
-
-  <div class = "rightColumn command-line">
-    Use the below commands to effect the displayed model
-    <button id = "btn-turn-on"> !- RunAnim(Turn on) </button> <br>
-    <button id = "btn-edjust"> !- RunAnim(Edjust) </button>
-    <button id = "btn-wireframe">!- ToggleWireframe</button>
+      <div class = "col-sm-2 command-line">
+        Use the below commands to effect the displayed model
+        <button id = "btn-turn-on"> !-RunAnim(TurnOn) </button>
+        <button id = "btn-edjust"> !-RunAnim(Edjust) </button>
+        <button id = "btn-wireframe">!-ToggleWireframe</button>
+      </div>
+    </div>
   </div>
-
 
   <!-- append scripts -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/106/three.min.js'></script>
@@ -81,7 +82,7 @@
   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/2666677/GLTFLoader.js'></script>
   <script src="./CRTscript.js"></script>
 
-  <nav class = "navbar navbar-expand-sm bg-dark fixed-bottom navbar-dark">
+  <nav class = "navbar navbar-expand-sm bg-dark navbar-dark">
     <div class = "container-fluid">
       <div class = "navbar-text float left copywright">
         <p> <span class = "align-baseline">Retroware - view faster, cheaper.</span> </p>

@@ -61,27 +61,30 @@
     </div>
   </nav>
       
-  <div class = "command-line">
-    <p> hello world! </p>
-
+  <div class = "command-line command-line-main" id = "commandLineBody">
+    <p>Welcome [USER] to </p><h2>RetroWare</h2><p>The one stop shop for all your tech needs.</p><br>
+    <p>Explore our wares many wares, and we also take donations! Our long list of products consist of:</p>
     <ul>
-      <li>List item!</li>
-      <li>Still going!</li>
-      <li>ok still going,,,,</li>
-    </ul>
+      <li>modern CRT-TVs</li>
+      <li>Keyboards, mice, and other computer hardware</li>
+      <li>the famouse "Game-Geez" ^tm</li>
+    </ul><br>
 
-    <button>!Example.txt</button><br>
-    <a href="CRTviewer.html">!Open: Storefront/Modelview/CRT.glb</a>
+    <button onclick = "addText('Storefront');">!Show(Storefront.json)</button><br>
+    <button onclick = "addText('TnC1')">!Show(T&Cs.txt)</button><br>
+    <a href = "donations.html">!GoTo(donations)</a><br>
 
   </div>
 
-  <nav class = "navbar navbar-expand-sm bg-dark fixed-bottom navbar-dark">
+  <nav class = "navbar navbar-expand-sm bg-dark navbar-dark">
     <div class = "container-fluid">
       <div class = "navbar-text float left copywright">
         <p> <span class = "align-baseline">Retroware - view faster, cheaper.</span> </p>
       </div>
     </div>
   </nav>
+
+  <script src = "./TextAdditions.js"></script>
 
 
 </body>
