@@ -1,4 +1,4 @@
-let scene, camera, renderer, box;
+let scene, camera, renderer, box, run = false;
 
 init();
 
@@ -14,6 +14,9 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     document.body.append(renderer.domElement);
+    renderer.domElement.style.display = "none";
+
+    document.getElementById("CUBE").addEventListener("click", show);
 
     const light = new THREE.DirectionalLight();
     light.position.set(0, 1, 2);
@@ -29,9 +32,15 @@ function init() {
     update();
 }
 
+function show() {
+    renderer.domElement.style.display = "block";
+    run = true
+}
+
 function update() {
     requestAnimationFrame(update);
 
+    if (!run){return;}
     box.rotation.y += 0.01;
     scene.background = new THREE.Color(Math.sin(box.rotation.y)/4 + 0.2, 0, 0);
 
