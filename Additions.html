@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="CMDLNstyle.css">
+</head>
+
 <div id = "Storefront">
     <br>
     <h3>--! Opened Storefont.json</h3>
@@ -5,7 +9,7 @@
     <p>Showing producsts 3/24:</p>
     <a href = "CRTviewer.html">!Run(ProductViews(CRT_TV.glb))</a><br>
     <a href = "Keyboardviewer.html">!Run(ProductViews(Keyboard.glb))</a><br>
-    <a href = "#">!Run(ProductViews(GameGeez.glb))</a>
+    <a href = "GGzviewer.html">!Run(ProductViews(GameGeez.glb))</a>
 </div>
 
 <div id = "TnC1">
@@ -22,10 +26,86 @@
 </div>
 
 <div id = "TnC2">
+    <br>
+    <h3>--! Continuing...</h3>
     <p>
+        3.1: to follow the path is to accept 3.0.
         4.0: any donations made will have full documentation of where funds go<br>
         <a href = "donations.html"> To read more on donation rules, click here.</a><br>
         5.0: these terms apply to any and all products sold<br>
         5.1: any RetroWare products bought from seperate storefonts have warrantees void<br>
     </p>
+</div>
+
+<div id = "links">
+    <br>
+    <h3>--! Opened Links</h3>
+    <p> Links: </p>
+    <a href = "index.html">!GoTo(HomePage)</a><br>
+    <a href = "About.html">!GoTo(AboutPage)</a><br>
+    <a href = "donations.html">!GoTo(Donations)</a>
+</div>
+
+<div id = "Log_Buttons">
+    <br>
+    <h3>--! Opened Buttons Devlog</h3>
+    <p>
+        This section of the devlog goes over the buttons seen around the pages.
+        Specifically, how they are stylized, and how the text is added to the page when some buttons are pressed.
+        If you see this text, that means that the buttons work, so thats a good sign!
+
+        <br><img src = "assets/Screenshots/buttonStyle.png" alt = "the style of the buttons"><br>
+        buttons and links (the "a") are both given a brighter green colour, along with an underline.
+        The border, background and align are changed to assure it fits well with the rest of the text.
+
+        <br><img src = "assets/Screenshots/AdditionsScript.png" alt = "code for the 'additions' buttons"><br>
+        For the buttons to work, a Javascript script loads a secondary html document.
+        A button can then call the "addText()" function along with an id to pick from the hmtl document, 
+        duplicates this element, and pastes it into the webpage document.
+        Since this document is in html, you can view this file <a href = "Additions.html">here!</a>
+    </p>
+</div>
+
+<div id = "log_three">
+    <br>
+    <h3>--! Opened Three.js Devlog</h3>
+    <p>
+        This section of the devlog goes over the 3D rendering using Three.
+        To start up the scene, each of the following items are loaded:
+        <ul>
+            <li>Each glb model including the model, materials and actions/animations</li>
+            <li>Lights - specifics depend on the model</li>
+            <li>Camera and orbit controls</li>
+        </ul>
+        After everything is loaded, the button on-click signals are connected to the animations.
+
+        <br><img src = "assets/Screenshots/ThreeCodeExamples.png" alt = "examples of the animate and resize function"><br>
+        For the animation, the function first calls the "request animation frame" function that will queue itself up to run on the next frame.
+        In this function, the animation mixer is updated to run any animations playing, and the background colour is updated to change from the black to green gradient.
+        In the resize function, it gets the size of the canvas its rendering to, and then updates the renderer and camera.
+
+       <br><img src = "assets/Screenshots/ThreeCodeExamples2.png" alt = "examples of the animation and wireframe function"><br>
+       To play the animation, the amount of loaded actions is checked first to make sure they are all loaded. 
+       When playing the animation, its first reset, set to loop the correct amount of times, and then played.
+       To show the wireframe, the scene is searched through, and when a mesh is found, its material's wireframe mode is toggles on/off
+    </p>
+</div>
+
+<div id = "log_theme">
+    <br>
+    <h3>--! Opened Theming Devlog</h3>
+    <p>
+        The overall theme of this website is meant to resemble a very old (Retro, if you will) tech store that hopped on this new thing 
+        called the "internet". It was developed single-handedly by a very tech-savvy person, hence the command line aesthetic.
+        Since opening however, the store had become a bit, underused. The previously large array of products has now been reduced to three old
+        tech fossils. <br><br>
+        But is that all? Theres something weird cut off in the terms and conditions, and whats up with the donations page?
+        <a style = "color: #001000">THERE IS AN ICON DEEP IN THIS SITE. LOCATE THE CODE IN THE CODE AND DONATE YOURSELF</a>
+    </p>
+</div>
+
+
+<div class = "command-line command-line-main"><br><br><br>
+<h1>THE SOUL SHALL FOLLOW THE CUBE. REVEAL THE SECRET AND UNLOCK THE KEY</h1><br><br><br>
+<p style="color: white;">THE CODE IS 11045</p>
 </div>

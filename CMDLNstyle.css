@@ -57,6 +57,13 @@
     float: right;
 }
 
+.command-line img {
+    border: #88ff88;
+    border-width: 3px;
+    border-style: solid;
+    margin: 15px;
+}
+
 /* container for the 3D model*/
 #threeContainer {
     height: 80vh;

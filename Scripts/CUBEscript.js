@@ -33,6 +33,9 @@ function init() {
 }
 
 function show() {
+    const code = document.getElementById("CUBEENTER").value;
+    console.log(code);
+    if (code != 11045) {return;}
     renderer.domElement.style.display = "block";
     run = true
 }
