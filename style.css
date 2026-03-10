@@ -38,21 +38,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: OCRBfont;
 }
 
-.dropdown-menu {
-    text-align: -webkit-left;
-    background-color: #eb9a91;
-    margin-top: 20px;
-}
-
 .dropdown-menu
 .dropdown-item {
-    color: #f1ee08;
+    color:#88ff88;
 }
 
 .dropdown-menu
 .dropdown-item:hover {
     color: #030303;
-    background-color: #e98074;
 }
 
 .footer {
@@ -62,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-text > a {
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 8px;
     text-decoration: none;
 }
@@ -207,10 +200,6 @@ h1, h2, h3, h4, h5, h6 {
     #main_text p {
         font-size: 15px;
     }
-    
-    /* ++++++++++++++++++++++++++LOGO+++++++++++++++++++++++*/
-    
-    /* CSS rule to style the mobile logo */
 
     .logo {
         margin-top: 3px;

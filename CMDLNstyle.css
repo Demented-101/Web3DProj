@@ -7,7 +7,7 @@
 .command-line {
     font-family: OCRBfont;
     color: #4bee00;
-    font-size: 17px;
+    font-size: 10px;
 
     margin-top: 5px;
     margin-bottom: 5px;
@@ -43,6 +43,11 @@
     text-align: left;
 }
 
+.dropdown-item{
+    color: #88ff88;
+    text-decoration: underline;
+}
+
 .separatorL, .separatorR {
     width: 1%;
     height: 80vh;
@@ -64,6 +69,16 @@
     margin: 15px;
 }
 
+.dropdown-menu {
+    text-align: -webkit-left;
+    background-color: #000000;
+
+    border-color: #303030;
+    border-width: 3px;
+    border-radius: 0px;
+    margin-top: 20px;
+}
+
 /* container for the 3D model*/
 #threeContainer {
     height: 80vh;
@@ -75,4 +90,16 @@
 
 .three-container {
     background-color: #282828;
+}
+
+@media (min-width: 768px){
+    .command-line {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 992px){
+    .command-line {
+        font-size: 18px;
+    }
 }
