@@ -1,4 +1,4 @@
-let scene, camera, renderer, model, iswireframe = false, clock, mixer, actions = [];
+let scene, camera, renderer, model, iswireframe = false, clock, mixer, actions = [], turnedOn;
 
 init();
 
@@ -24,6 +24,10 @@ function init() {
     const light = new THREE.DirectionalLight(0xFFFFFF, 2);
     light.position.set(2, 10, 0);
     scene.add(light);
+
+    const light2 = new THREE.PointLight(0xFFFFFF, 2, 6);
+    light2.position.set(4,0.5,0);
+    scene.add(light2)
     
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.target.set(0, 0, 0);
@@ -50,7 +54,9 @@ function init() {
     // setup buttons
     document.getElementById("btn-pressed-1").addEventListener('click', () => animButtons(0));
     document.getElementById("btn-pressed-2").addEventListener("click", () => animButtons(1));
+    document.getElementById("btn-pressed-3").addEventListener("click", animTurnOn); 
     document.getElementById("btn-wireframe").addEventListener("click", toggleWireframe);
+    animTurnOn = "Off"
 
     // Handle resizing
     window.addEventListener('resize', onResize, false);
@@ -84,10 +90,20 @@ function onResize(){
 }
 
 function animButtons(index) {
-    if (actions.length === 2) {
+    if (actions.length === 3) {
         actions[index].reset();
         actions[index].setLoop(THREE.LoopPingPong, 1);
         actions[index].play();
+    };
+}
+
+function animTurnOn(){
+    if (actions.length === 3 && animTurnOn != "On") {
+        animTurnOn = "On"
+        actions[2].reset();
+        actions[2].setLoop(THREE.LoopOnce, 1);
+        actions[2].clampWhenFinished = true
+        actions[2].play();
     };
 }
 
