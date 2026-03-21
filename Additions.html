@@ -11,15 +11,15 @@
     <ul>
         <li>
             <img src = "assets/images/REND_crt_trans.png" alt = "Render of the CRT-TV" class = "icon">
-            <a href = "CRTviewer.html">!Run(ProductViews(CRT_TV.glb))</a>
-        </li>
-        <li>
-            <img src = "assets/images/REND_gamegeez_trans.png" alt = "Render of the GameGeez" class = "icon">
-            <a href = "GGzviewer.html">!Run(ProductViews(GameGeez.glb))</a>
+            <a href = "CRTviewer.html">!Run(ProductViews(CRT_TV.glb))</a><p>  CRT Model D3-1 </p><br>
         </li>
         <li>
             <img src = "assets/images/REND_keyboard_trans.png" alt = "Render of the keyboard" class = "icon">
-            <a href = "Keyboardviewer.html">!Run(ProductViews(Keyboard.glb))</a>
+            <a href = "Keyboardviewer.html">!Run(ProductViews(Keyboard.glb))</a><P>  "Hundred" Keyboard</P><br>
+        </li>
+        <li>
+            <img src = "assets/images/REND_gamegeez_trans.png" alt = "Render of the GameGeez" class = "icon">
+            <a href = "GGzviewer.html">!Run(ProductViews(GameGeez.glb))</a><P>  Game-Geez ^tm</P>
         </li>
         <br>
     </ul>
@@ -91,6 +91,8 @@
             <li>Camera and orbit controls</li>
         </ul>
         After everything is loaded, the button on-click signals are connected to the animations.
+        For the camera itself, I've decided that positioning it to the top-right corner of the model to mimic the orthogonal style of the icons is best.
+        This makes it look mode 3D and hints the user towards using the mouse to control the camera too.
 
         <br><img src = "assets/Screenshots/ThreeCodeExamples.png" alt = "examples of the animate and resize function" class = "image-code"><br>
         For the animation, the function first calls the "request animation frame" function that will queue itself up to run on the next frame.
@@ -129,6 +131,8 @@
         <br>
         The texture for the CRT-TV for example (far left) as two tones of yellow/baige for the main plastic body, and another for the screen when active.
         At the bottom right of the image, the texture for the plugs was meant to be use as such, but ended up being used for the knobs at the front.
+        For the Game-Geez, I modelled the cable using a bezier curve, giving it the correct width, and then converted it to a mesh to allow it to export correctly.
+        For the Keyboard, each key was generated using an Array modifier in blender and then modified to the correct size.
         The final models (screenshotted and then given transparent backgrounds below) were all made in blender, given some animations and exported to .glb formatting.
         <br><br><br>
 
@@ -149,7 +153,13 @@
 
         <img src = "assets/images/REND_keyboard_trans.png" alt = "Render of the keyboard" class = "icon"><br>
         The Keyboard is a basic keyboard that has six animations, but each of them are a different key being pressed. Ideally, each button could be animated to be pressed,
-        however that means each key would have to be an individual model, and have an animation. Each key was generated using an Array modifier in blender and then modified to the correct size.
+        however that means each key would have to be an individual model, and have an animation.
+    </p>
+    <p>
+        Below are three images of the wireframes of each model, including the UV unwraps of each model. <br>
+        <img src = "assets/images/CRT Blender SS.png" alt = "Screenshot of Blender with the UV unwrap and wireframe of the CRT" class = ".image-code-s">
+        <img src = "assets/images/GGz Blender SS.png" alt = "Screenshot of Blender with the UV unwrap and wireframe of the Game Geez" class = ".image-code-s">
+        <img src = "assets/images/Keyb Blender SS.png" alt = "Screenshot of Blender with the UV unwrap and wireframe of the keyboard" class = ".image-code-s">
     </p>
 </div>
 

@@ -16,7 +16,7 @@ function init() {
     renderer.setPixelRatio(canvas.devicePixelRatio);
     
     camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
-    camera.position.set(0, 5, 7);
+    camera.position.set(1, 5, 4);
     
     const ambient = new THREE.HemisphereLight(0x88cc88, 0x080820, 1);
     scene.add(ambient);
