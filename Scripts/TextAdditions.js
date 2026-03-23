@@ -1,9 +1,11 @@
-let target, template = null;
+let target, template = null, clearButton, additions = [];
 
 init();
 
 function init(){
     target = document.getElementById("commandLineBody");
+    clearButton = document.getElementById("clear-button");
+    clearButton.addEventListener("click", clear);
 
     fetch("Additions.html")
     .then((response) => response.text())
@@ -14,13 +16,18 @@ function init(){
 function addText(id){
     if (template === null) {return;}
     console.log(template);
-    const welcomeText = template.getElementById(id).cloneNode(true);
-    target.appendChild(welcomeText);
+    const newText = template.getElementById(id).cloneNode(true);
+    target.insertBefore(newText, clearButton)
+    additions.push(newText);
 }
 
 function saveTemplate(html){
     const parser = new DOMParser();
     template = parser.parseFromString(html, "text/html");
-    console.log(template);
+}
+
+function clear(){
+    console.log("wuh");
+    additions.forEach((element) => element.remove());
 }
 

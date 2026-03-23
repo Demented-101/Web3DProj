@@ -4,6 +4,11 @@
     src: url(assets/fonts/OCBR.otf);
 }
 
+@font-face {
+    font-family: Merchant;
+    src: url(assets/fonts/Merchant\ Copy.ttf);
+}
+
 .command-line {
     font-family: OCRBfont;
     color: #4bee00;
@@ -43,6 +48,15 @@
     text-align: left;
 }
 
+#clear-button {
+    color: #88ff88;
+    background: #88ff8822;
+    text-decoration: underline;
+    padding-left: 0px;
+    margin-top: 40px;
+    text-align: left;
+}
+
 .dropdown-item{
     color: #88ff88;
     text-decoration: underline;
@@ -52,14 +66,6 @@
     width: 1%;
     height: 80vh;
     background-color: #282828;
-}
-
-.separatorL {
-    float: left;
-}
-
-.separatorR {
-    float: right;
 }
 
 .command-line .icon{
@@ -110,15 +116,21 @@
 
 /* container for the 3D model*/
 #threeContainer {
-    height: 80vh;
+    height: 60vh;
     width: 100%;
     display: block;
     overflow: hidden;
-    background-color: #282828;
+    background-color: #212529;
 }
 
 .three-container {
-    background-color: #282828;
+    background-color: #212529;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+    width: 100vw;
 }
 
 @media (min-width: 768px){
@@ -136,6 +148,17 @@
         height: 175px;
     }
 
+    #threeContainer {
+        height: 80vh;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        background-color: #212529;
+    }
+
+    .three-container {
+        width: 66.6666667%;
+    }
 }
 
 @media (min-width: 992px){
@@ -152,4 +175,28 @@
     .command-line img {
         height: 200px;
     }
+
+    #threeContainer {
+        height: 80vh;
+        width: 100%;
+        display: block;
+        overflow: hidden;
+        background-color: #212529;
+    }
+}
+
+.CUBE{
+    font-family: Merchant;
+    font-size: 25px;
+    color:red;
+    background-color: #000000;
+    border-color: red;
+}
+
+.CUBE-hidden {
+    font-family: Merchant;
+    font-size: 25px;
+    color:#ff000010;
+    background-color: #000000;
+    border-color: #ff000010;
 }
